@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HSL values derived from blueprint hex palette */
+:root {
+  --radius: 0.75rem;
+
+  /* Light theme fallback (kept usable); project defaults to dark via .dark */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+
+  --card: 0 0% 100%;
+  --border: 214 32% 91%;
+  --ring: 45 65% 52%;
+
+  --primary: 45 65% 52%;
+  --primary-foreground: 210 10% 4%;
+
+  --secondary: 215 28% 17%;
+  --secondary-foreground: 40 24% 95%;
+
+  --accent: 0 74% 42%;
+
+  --muted: 222 30% 10%;
+  --muted-foreground: 218 16% 70%;
+}
+
+.dark {
+  --background: 220 19% 5%;
+  --foreground: 40 24% 95%;
+
+  --card: 220 25% 8%;
+  --border: 216 26% 20%;
+  --ring: 45 65% 52%;
+
+  --primary: 45 65% 52%;
+  --primary-foreground: 210 10% 4%;
+
+  --secondary: 215 28% 17%;
+  --secondary-foreground: 40 24% 95%;
+
+  --accent: 0 74% 42%;
+
+  --muted: 222 30% 10%;
+  --muted-foreground: 218 16% 70%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
